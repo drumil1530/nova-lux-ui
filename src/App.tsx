@@ -1,9 +1,21 @@
+import { Route, Routes } from 'react-router';
 import './App.css';
+import ButtonPG from './playground/ButtonPG';
+import Navbar from './app/components/Navbar';
 
 function App() {
+  const links = ['Home', 'Buttons'];
+  const linkPath = ['/', '/buttons'];
   return (
     <>
-      <h1 className="text-4xl text-emerald-600 font-semibold">hELLO</h1>
+      <Navbar linkTexts={links} linksPaths={linkPath} />
+
+      <div className='p-3'>
+        <Routes>
+          <Route path="/" element={<h1>Home</h1>}></Route>
+          <Route path="/buttons" element={<ButtonPG />}></Route>
+        </Routes>
+      </div>
     </>
   );
 }

@@ -1,8 +1,8 @@
-import type { DefaultColor, SemanticColor } from '../../utils/types';
+import type { Colors } from '../../utils/types';
 
 export type ButtonSize = 'sm' | 'md' | 'lg';
 export type ButtonVarinats = 'solid' | 'outline' | 'ghost';
-export type ButtonColors = DefaultColor | SemanticColor;
+export type ButtonColors = Colors;
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

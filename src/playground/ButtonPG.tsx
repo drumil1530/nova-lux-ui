@@ -1,5 +1,5 @@
 import { Button } from '../components';
-import { COLORS, SEMANTIC_COLORS } from '../utils/colors';
+import { BASE_COLORS, SEMANTIC_COLORS } from '../utils/colors';
 
 const ButtonPG = () => {
   return (
@@ -40,21 +40,21 @@ const ButtonPG = () => {
           Color Variants
         </h2>
         <div className="flex flex-wrap gap-2">
-          {COLORS.map((color) => (
+          {BASE_COLORS.map((color) => (
             <Button key={color} variant="solid" color={color}>
               {color}
             </Button>
           ))}
         </div>
         <div className="flex flex-wrap gap-2">
-          {COLORS.map((color) => (
+          {BASE_COLORS.map((color) => (
             <Button key={color} variant="outline" color={color}>
               {color}
             </Button>
           ))}
         </div>
         <div className="flex flex-wrap gap-2">
-          {COLORS.map((color) => (
+          {BASE_COLORS.map((color) => (
             <Button key={color} variant="ghost" color={color}>
               {color}
             </Button>

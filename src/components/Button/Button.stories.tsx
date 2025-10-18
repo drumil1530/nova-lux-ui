@@ -1,11 +1,11 @@
 import { Button } from './Button';
-import { COLORS, SEMANTIC_COLORS } from '../../utils/colors';
+import { BASE_COLORS, SEMANTIC_COLORS } from '../../utils/colors';
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ButtonSize, ButtonVarinats } from './Button.types';
 
 const VARIANTS: ButtonVarinats[] = ['solid', 'outline', 'ghost'] as const;
 const SIZES: ButtonSize[] = ['sm', 'md', 'lg'] as const;
-const COLORS_ALL = [...SEMANTIC_COLORS, ...COLORS] as const;
+const COLORS_ALL = [...SEMANTIC_COLORS, ...BASE_COLORS] as const;
 
 export default {
   title: 'Components/Button',

@@ -1,6 +1,6 @@
-import type { DefaultColor, SemanticColor } from './types';
+import type { SemanticColor, SemanticMapValue } from './types';
 
-export const COLORS = [
+export const BASE_COLORS = [
   'red',
   'orange',
   'amber',
@@ -33,10 +33,10 @@ export const SEMANTIC_COLORS = [
   'warning',
 ] as const;
 
-export const SEMANTIC_VARIANTS: Record<SemanticColor, Partial<DefaultColor>> = {
-  primary: 'blue',
-  secondary: 'zinc',
-  success: 'green',
-  danger: 'red',
-  warning: 'amber',
+export const COLOR_MAP: Record<SemanticColor, SemanticMapValue> = {
+  primary: { base: 'blue', dark: 'indigo' },
+  secondary: { base: 'zinc', dark: 'neutral' },
+  success: { base: 'green' },
+  danger: { base: 'red' },
+  warning: { base: 'amber' },
 } as const;

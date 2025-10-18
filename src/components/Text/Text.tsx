@@ -2,8 +2,7 @@ import type { ElementType } from 'react';
 import type { TextProps } from './Text.types';
 import { cn } from '../../utils/cn';
 import { colorClasses, sizeClasses } from './Text.config';
-import { SEMANTIC_VARIANTS } from '../../utils/colors';
-import type { SemanticColor } from '../../utils/types';
+import { resolveColor } from '../../utils/colorResolver';
 
 export function Text  <E extends ElementType = 'p'>({
   as,
@@ -18,7 +17,7 @@ export function Text  <E extends ElementType = 'p'>({
   ...rest
 }: TextProps<E>) {
   const Component = as || 'p';
-  const resolvedColor = color in SEMANTIC_VARIANTS ? SEMANTIC_VARIANTS[color as SemanticColor] : color;
+  const resolvedColor = resolveColor(color);
 
   const classes = cn(
     sizeClasses[size],

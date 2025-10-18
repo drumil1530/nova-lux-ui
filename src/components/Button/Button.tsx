@@ -1,7 +1,8 @@
 import type { ButtonProps } from './Button.types';
 import { cn } from '../../utils/cn';
-import { sizeClasses, variantClasses, semanticToColor } from './Button.config';
-import type { DefaultColor, SemanticColor } from '../../utils/types';
+import { sizeClasses, variantClasses } from './Button.config';
+import type { DefaultColor } from '../../utils/types';
+import { resolveColor } from '../../utils/colorResolver';
 
 export function Button({
   children,
@@ -23,9 +24,7 @@ export function Button({
     'disabled:shadow-none'
   );
 
-  const resolvedColor =
-    color in semanticToColor ? semanticToColor[color as SemanticColor] : color;
-
+  const resolvedColor = resolveColor(color);
   const variantMap = variantClasses[variant] || {};
   const classesForColor = variantMap[resolvedColor as DefaultColor] || '';
 

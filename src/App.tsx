@@ -2,18 +2,20 @@ import { Route, Routes } from 'react-router';
 import './App.css';
 import ButtonPG from './playground/ButtonPG';
 import Navbar from './app/components/Navbar';
+import TextPG from './playground/TextPG';
 
 function App() {
-  const links = ['Home', 'Buttons'];
-  const linkPath = ['/', '/buttons'];
+  const links = ['Home', 'Buttons', 'Text'];
+  const linkPath = ['/', '/buttons', '/text'];
   return (
     <>
       <Navbar linkTexts={links} linksPaths={linkPath} />
 
-      <div className='p-3'>
+      <div className="p-3">
         <Routes>
           <Route path="/" element={<h1>Home</h1>}></Route>
           <Route path="/buttons" element={<ButtonPG />}></Route>
+          <Route path="/text" element={<TextPG />}></Route>
         </Routes>
       </div>
     </>
